@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<title>Formación continua</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+
+<!-- Favicons -->
+
+
+<!-- CSRF Token -->
+<meta name="csrf-token" content="MPZRjhFtceBIXLzy01njsmTpYNoaLlz9U0NngYPH">
+
+
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="MPZRjhFtceBIXLzy01njsmTpYNoaLlz9U0NngYPH">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Vendor CSS Files -->
+    <link href="https://esit.gob.sv/niceAdmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://esit.gob.sv/niceAdmin/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://esit.gob.sv/niceAdmin/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="https://esit.gob.sv/niceAdmin/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://esit.gob.sv/niceAdmin/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="https://esit.gob.sv/niceAdmin/vendor/quill/quill.bubble.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="https://esit.gob.sv/niceAdmin/css/style.css?v=310506" rel="stylesheet">
+
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    
+    <script type="text/javascript" src="https://esit.gob.sv/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+    <link href="https://esit.gob.sv/css/select2.min.css" rel="stylesheet" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js" integrity="sha512-efAcjYoYT0sXxQRtxGY37CKYmqsFVOIwMApaEbrxJr4RwqVVGw8o+Lfh/+59TU07+suZn1BWq4fDl5fdgyCNkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-34GXQKZSJ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-34GXQKZSJ6');
+</script>
+    <style>
+        .border-primary {
+            border-color: rgb(48, 164, 241);
+            border-radius: 25px;
+        }
+
+        .select2-selection__choice {
+            background-color: #e4e4e4;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: inline-block;
+            margin-left: 5px;
+            margin-top: 5px;
+            padding: 0;
+            padding-left: 20px;
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: bottom;
+            white-space: nowrap;
+        }
+
+        .select2-selection__choice__remove {
+            height: 45px !important;
+            background-color: transparent;
+            border: none;
+            border-right: 1px solid #aaa;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            color: #999 !important;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            padding: 0 4px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .select2-selection--single {
+            height: 42px !important;
+        }
+        .select2-container--bootstrap4 .select2-selection--single {
+            height: 42px !important;
+            border-radius: 9px !important;
+        }
+        .select2-container--bootstrap4 .select2-selection {
+            border: 1px solid #697182 !important;
+        }
+
+        .select2-selection__choice__remove:hover {
+            color: #000 !important;
+        }
+
+        .select2-selection__choice__display {
+            cursor: default;
+            padding-left: 25px;
+            padding-right: 5px;
+        }
+
+        .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
+            float: none;
+            margin-bottom: 2px;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+            -moz-cursor: pointer;
+            -o-cursor: pointer;
+            -webkit-cursor: pointer;
+        }
+
+        @media (max-width: 500px) {
+            .cerrar-sesion {
+                font-size: 10px !important;
+            }
+        }
+
+        #headerUser .header-nav .nav-profile span {
+            font-size: 18px !important;
+            color: #30A4F1;
+        }
+
+        #main {
+            margin-top: 0px !important;
+            padding-top: 20px !important;
+        }
+
+        #sidebar {
+            top: 0px !important;
+        }
+
+        #header {
+            z-index: 999999999999999992;
+            padding: 20px;
+            position: absolute;
+        }
+
+        #header i {
+            font-size: 25px;
+        }
+    </style>
+
+    <script>
+        $(function() {
+            $(".btn-MENUICON").click(function() {
+                $(this).toggleClass("menuActive");
+            });
+        })
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34GXQKZSJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-34GXQKZSJ6');
+    </script>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="" style="width:100px">
+
+    <div class="d-flex align-items-center justify-content-between btn-MENUICON menuActive" id="btnMenuLine">
+      
+      <i class="fas fa-bars toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+</header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar sidebar-color-degradado p-0">
+
+
+    <div class="paddingLogo">
+        <img src="https://esit.gob.sv/img/logo-innovacion-blanco.png" alt=" ">
+    </div>
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        
+            
+                <li class="nav-heading">Usuario</li>
+
+                <li class="nav-item">
+                    <a style="background-color: transparent;" class="nav-link collapsed" href="https://esit.gob.sv/cursos">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Cursos disponibles</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a style="background-color: transparent;" class="nav-link collapsed" href="https://esit.gob.sv/cursos/miscursos">
+                        <i class="fas fa-list-alt"></i>
+                        <span>Mis cursos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a style="background-color: transparent;" class="nav-link collapsed" href="https://esit.gob.sv/home">
+                        <i class="fas fa-user"></i>
+                        <span>Mi perfil</span>
+                    </a>
+                </li>
+
+                
+                
+            
+        
+    </ul>
+
+</aside>
+    <!-- End Sidebar-->
+
+    <!-- ======= main ======= -->
+    <main id="main" class="main">
+
+        <div class="row">
+            <header id="headerUser" class="d-flex bd-highlight">
+                <nav class="header-nav ms-auto align-items-right" style="display:flex;color:#30A4F1">
+                    
+
+
+                    <li class="nav-item dropdown" style="list-style-type: none;display: flex;justify-content: center;align-items: center;">
+
+                        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-bell"></i>
+                                                            <span class="badge bg-danger badge-number">1</span>
+                                                    </a><!-- End Notification Icon -->
+
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                                                        <li class="dropdown-header">
+                                Usted tiene 1 nueva notificación
+                                <a href="https://esit.gob.sv/notificaciones"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todas</span></a>
+                            </li>
+                            
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            
+                                
+                                    <a href="https://esit.gob.sv/cambiarestado/687" style="color: black; text-decoration: none;">
+                                        <li class="notification-item" style="background-color: #F1F6FF;">
+                                                                                            <i class="bi bi-x-circle text-danger"></i>
+                                            
+                                            <div>
+                                                <h4>Herramientas de desarrollo  web (Introducción a PHP y Laravel)</h4>
+                                                <p>Su postulación al curso fue rechazada.</p>
+                                                <p>
+                                                    hace 18 horas                                                </p>
+                                            </div>
+                                        </li>
+                                    </a>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                
+                                    <a href="https://esit.gob.sv/cambiarestado/242" style="color: black; text-decoration: none;">
+                                        <li class="notification-item" style="background-color: white;">
+                                                                                            <i class="bi bi-x-circle text-danger"></i>
+                                            
+                                            <div>
+                                                <h4>Metodologías de gestión  de proyectos ágiles  (SCRUM MASTER)</h4>
+                                                <p>Su postulación al curso fue rechazada.</p>
+                                                <p>
+                                                    hace 2 días                                                </p>
+                                            </div>
+                                        </li>
+                                    </a>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                
+                            
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="dropdown-footer">
+                                <a href="https://esit.gob.sv/notificaciones">Ver todas las notificaciones</a>
+                            </li>
+
+                        </ul><!-- End Notification Dropdown Items -->
+
+                    </li><!-- End Notification Nav -->
+
+                    <li class="ms-auto p-2 bd-highlight dropdown pe-3" style="list-style: none;">
+
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
+                            data-bs-toggle="dropdown">
+                            
+                            <span
+                                class="d-md-block dropdown-toggle ps-2 cerrar-sesion">CESAR BLADIMIR ROMERO RUGAMAS</span>
+                                &nbsp;&nbsp;<img src="https://esit.gob.sv/niceAdmin/img/user-default.jpg" alt="Profile" class="rounded-circle">
+                            </a><!-- End Profile Iamge Icon -->
+
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                            
+
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="https://esit.gob.sv/logout"
+                                    onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Cerrar sesión</span>
+                                </a>
+                                <form id="logout-form" action="https://esit.gob.sv/logout" method="POST" class="d-none">
+                                    <input type="hidden" name="_token" value="MPZRjhFtceBIXLzy01njsmTpYNoaLlz9U0NngYPH">                                </form>
+                            </li>
+
+                        </ul><!-- End Profile Dropdown Items -->
+                    </li><!-- End Profile Nav -->
+                </nav>
+            </header>
+        </div>
+
+        <!-- ======= Page Title ======= -->
+        <div class="pagetitle">
+    <h1 style="color: rgb(48,164,241)"></h1>
+      </div>
+        <!-- End Page Title -->
+
+        <section class="section">
+            <div class="mb-5">
+                    <style>
+        .curso-item {
+            display: flex;
+        }
+
+        .curso-item p {
+            width: 45%;
+        }
+
+        .curso-item span {
+            text-align: justify;
+            width: 55%;
+        }
+    </style>
+    <div class="col-xl-12">
+
+        <div class="card">
+            <div class="card-body pt-3">
+
+                <ul class="nav nav-tabs nav-tabs-bordered justify-content-center">
+
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview"><i
+                                class="fas fa-info"></i> Información del curso</button>
+                    </li>
+
+                    
+
+                </ul>
+                <div class="tab-content pt-2">
+
+                    <div class="tab-pane fade show active profile-overview" id="profile-overview">
+
+                        <div class="container">
+                            <div class="row mt-5">
+                                <div class="col-4">
+                                    <img src="https://esit.gob.sv/storage/cursos/Hk4an765y9qC5Zz0HmRRwMe9fEoGusiUOjyzqi5y.jpg"
+                                        class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body" style="min-height: 70vh;">
+                                        <h1 style="font-weight: bold; color: rgb(48,164,241)">Normas internacionales  para la gestión de la  gobernanza de TI (Normas ITIL)</h1>
+                                        <p class="mb-0"><strong>Objetivo</strong></p>
+                                        <p class="card-text me-text-justify">Fortalecer las competencias de los participantes para el uso de herramientas e implementación de buenas prácticas para el mantenimiento y mejora de la gestión de los servicios y procesos de Tecnologías de la Información (TI), abordando las temáticas de gobernanza de tecnologías de la información incluidas en la Information Technology Infrastructure Library (ITIL)</p>
+                                        <p class="mb-0"><strong>Descripción</strong></p>
+                                        <p class="card-text me-text-justify">El curso brindará los conocimientos necesarios para las buenas prácticas en la gestión de servicios de tecnología encaminados a la mejora de la infraestructura, desarrollo y operaciones de TI, y con ello impulsar mejoras en la calidad de los servicios digitales</p>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="curso-item">
+                                                    <p>
+                                                        <i class="fa-solid fa-user"
+                                                            style="font-size: 20px; margin-right: 10px"></i><strong> Perfil
+                                                            al
+                                                            que va dirigido:</strong>
+                                                    </p>
+                                                    <span>Jefaturas o técnicos de área de TI que participan en proyectos tecnológicos</span>
+                                                </div>
+                                                <div class="curso-item">
+                                                    <p><i class="fa-regular fa-calendar"
+                                                            style="font-size: 20px; margin-right: 10px"></i><strong>Fecha de
+                                                            inicio de inscripción:</strong>
+                                                    </p>
+                                                    <span>
+                                                        25-05-2023
+                                                    </span>
+                                                </div>
+                                                <div class="curso-item">
+                                                    <p><i class="fa-solid fa-circle"
+                                                            style="font-size: 10px; margin-left: 7%; margin-right: 10px"></i><strong>Fecha
+                                                            de fin de inscripción:</strong>
+                                                    </p>
+                                                    <span>
+                                                        26-05-2023
+                                                    </span>
+                                                </div>
+                                                <div class="curso-item">
+                                                    <p><i class="fa-solid fa-circle"
+                                                            style="font-size: 10px; margin-left: 7%; margin-right: 10px"></i><strong>Fecha
+                                                            de inicio de curso:</strong>
+                                                    </p>
+                                                    <span>
+                                                        29-05-2023
+                                                    </span>
+                                                </div>
+                                                <div class="curso-item">
+                                                    <p><i class="fa-solid fa-circle"
+                                                            style="font-size: 10px; margin-left: 7%; margin-right: 10px"></i><strong>Fecha
+                                                            de fin del curso:</strong>
+                                                    </p>
+                                                    <span>
+                                                        09-06-2023
+                                                    </span>
+                                                </div>
+                                                <div class="curso-item">
+                                                    <p><i class="fa-solid fa-laptop"
+                                                            style="font-size: 20px; margin-right: 10px"></i><strong>Modalidad:</strong>
+                                                    </p>
+                                                    <span>Virtual</span>
+                                                </div>
+                                                <div class="curso-item">
+                                                    <p><i class="fa-regular fa-clock"
+                                                            style="font-size: 20px; margin-right: 10px"></i><strong>Duración:</strong>
+                                                    </p>
+                                                    <span>
+                                                        20 horas
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                                                                                                                    <div class="alert alert-warning text-center" role="alert">
+                                                    La fecha de inscripción ha finalizado.
+                                                </div>
+                                                                                                                        </div>
+                                </div>
+                                <div class="col-12">
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                                                    <div class="row">
+                                <div style="height: 400px; display: flex; align-items: center; justify-content: center;">
+                                    <h5 class="bg-gray">Aun no ha sido calificado</h5>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+            <div class="py-5"></div>
+            <footer class="d-flex flex-wrap justify-content-between align-items-center px-2 px-md-4  fixed-bottom pt-1">
+                <div class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none ">
+                </div>
+                <a href="https://www.presidencia.gob.sv/" target="_blank" class="col-md-4 d-flex align-items-center justify-content-center mb-1 mb-md-3  mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <img width="70%"  src="https://esit.gob.sv/img/gobierno.png" alt="">
+                </a>
+                <ul class="nav col-12 col-md-4  justify-content-center   list-social-media">
+                    <li class="nav-item"><a href="https://www.facebook.com/PresidenciaSV" target="_blank" class="nav-link px-2 text-muted"><i class="bi bi-facebook"></i></a></li>
+                    <li class="nav-item"><a href="https://twitter.com/PresidenciaSV" target="_blank" class="nav-link px-2 text-muted"><i class="bi bi-twitter"></i></a></li>
+                    <li class="nav-item"><a href="" target="_blank" class="nav-link px-2 text-muted"><i class="bi bi-youtube"></i></a></li>
+                </ul>
+            </footer>
+        </section>
+
+    </main>
+            <div class="modal fade" id="modalConfirmPostulation" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center">Confirmar inscripción al curso</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <strong>Nombre completo:</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <span id="nombre_completo"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <strong>Grado académico:</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <span id="grado_academico"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <strong>Sector donde trabaja:</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <span id="sector_laboral"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <strong>Institución donde trabaja:</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <span id="institucion"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <strong>Cargo:</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <span id="cargo"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" id="accionConfirmPostulation" class="btn btn-primary">Confirmar
+                            inscripción</button>
+                        <button type="button" class="btn btn-outline-primary"><a
+                                href="https://esit.gob.sv/perfil">Actualizar
+                                perfil</a></button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Vertically centered Modal-->
+    
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+        <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script>
+        var base_url = "https://esit.gob.sv";
+    </script>
+    <script src="https://esit.gob.sv/niceAdmin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://esit.gob.sv/niceAdmin/vendor/php-email-form/validate.js"></script>
+    <script src="https://esit.gob.sv/niceAdmin/vendor/quill/quill.min.js"></script>
+    <script src="https://esit.gob.sv/niceAdmin/vendor/tinymce/tinymce.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://esit.gob.sv/niceAdmin/js/main.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/resize-sensor@0.0.6/ResizeSensor.min.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    
+    <script src="https://esit.gob.sv/js/axios.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var modalConfirmPostulation;
+            $(window).resize(function() {
+                arreglar_paginacion()
+            });
+            arreglar_paginacion()
+        });
+
+        if (document.getElementById('modalConfirmPostulation') !== null) {
+            modalConfirmPostulation = new bootstrap.Modal(document.getElementById('modalConfirmPostulation'), {
+                backdrop: true,
+                focus: false,
+            });
+
+            document.getElementById('modalConfirmPostulation').addEventListener('shown.bs.modal', function(
+                event) {
+                // initAutoreizeTextarea();
+                // console.log('open')
+            })
+        }
+
+        let arreglar_paginacion = () => {
+            if ($(window).width() < 800) {
+                $('nav>ul.pagination').addClass('pagination-sm')
+            } else {
+                $('nav>ul.pagination').removeClass('pagination-sm')
+            }
+        }
+
+        // alertas
+        let alerta_top = (mensaje, tipo = 'success', tiempo = '10000') => {
+            toastr.options = {
+                "closeButton": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "timeOut": tiempo,
+            }
+            toastr[tipo](mensaje);
+        }
+                let alerta = (form, texto, btnConfirmar = 'Si, Eliminar') => {
+            Swal.fire({
+                icon: 'warning',
+                title: '¡ADVERTENCIA!',
+                text: texto,
+                showCancelButton: true,
+                cancelButtonColor: 'red',
+                cancelButtonText: 'Cancelar',
+                confirmButtonText: btnConfirmar,
+                confirmButtonColor: 'green'
+            }).then(result => {
+                if (result.value) {
+                    $("#" + form).submit();
+                }
+            });
+        }
+        // fin alertas
+
+        // truncar decimales
+        function trunc_decimales(x, posiciones = 0) {
+            var s = x.toString()
+            var l = s.length
+            var decimalLength = s.indexOf('.') + 1
+
+            if (l - decimalLength <= posiciones) {
+                return x
+            }
+            // Parte decimal del número
+            var isNeg = x < 0
+            var decimal = x % 1
+            var entera = isNeg ? Math.ceil(x) : Math.floor(x)
+            // Parte decimal como número entero
+            // Ejemplo: parte decimal = 0.77
+            // decimalFormated = 0.77 * (10^posiciones)
+            // si posiciones es 2 ==> 0.77 * 100
+            // si posiciones es 3 ==> 0.77 * 1000
+            var decimalFormated = Math.floor(
+                Math.abs(decimal) * Math.pow(10, posiciones)
+            )
+            // Sustraemos del número original la parte decimal
+            // y le sumamos la parte decimal que hemos formateado
+            var finalNum = entera +
+                ((decimalFormated / Math.pow(10, posiciones)) * (isNeg ? -1 : 1))
+
+            return finalNum
+        }
+        // fin truncar decimales
+
+
+        let input_document_mask = (select_input, input_documento, act_placeholder = true) => {
+            let mascara = $(select_input).find('option[value="' + $(select_input).val() + '"]').attr('mascara-doc');
+            $(input_documento).val('').unmask().removeAttr('maxlength');
+            if (mascara != '') {
+                if (act_placeholder) {
+                    $(input_documento).attr('placeholder', mascara)
+                }
+                $(input_documento).mask(mascara)
+            }
+        }
+
+        var sideMenu = document.getElementById('btnMenuLine');
+
+        function detectarAncho() {
+            console.log('entrando...');
+            // Obtener el ancho del navegador
+            var anchoNavegador = window.innerWidth;
+
+            // Aplicar la clase al menú según el ancho del navegador
+            if (anchoNavegador < 1024) {
+                sideMenu.classList.add('menuActive-movil');
+            } else {
+                sideMenu.classList.remove('menuActive-movil');
+            }
+        }
+        window.addEventListener('load', detectarAncho);
+        window.addEventListener('resize', detectarAncho);
+
+    </script>
+        <script src="https://esit.gob.sv/js/main.js?v=1.0.0.0"></script>
+    <script>
+        $(document).ready(function() {
+            $('#postularse_accion').on('click', function(e) {
+
+                let curso_id = $(this).data('curso_id');
+
+                $.ajax({
+                    url: "https://esit.gob.sv/perfil/valid_complet_perfil",
+                    method: 'POST',
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.success) {
+                            $('#modalConfirmPostulation .modal-body span#nombre_completo')
+                                .html(data.user.name)
+                            $('#modalConfirmPostulation .modal-body span#grado_academico')
+                                .html(data.user.perfil.grado_academico.nombre)
+                            $('#modalConfirmPostulation .modal-body span#sector_laboral')
+                                .html(data.user.perfil.experiencia_laboral.sector_laboral
+                                    .nombre)
+                            $('#modalConfirmPostulation .modal-body span#institucion')
+                                .html(data.user.perfil.experiencia_laboral.institucion?.nombre)
+                            $('#modalConfirmPostulation .modal-body span#cargo')
+                                .html(data.user.perfil.experiencia_laboral.tipo_cargo?.nombre)
+                            modalConfirmPostulation.show();
+
+                            $('#modalConfirmPostulation #accionConfirmPostulation').on('click',
+                                () => {
+                                    $.ajax({
+                                        url: "https://esit.gob.sv/cursos/confirmar_postulacion",
+                                        data: {
+                                            curso_id
+                                        },
+                                        method: 'POST',
+                                        dataType: 'json',
+                                        success: function(data2) {
+                                            if (data2.success) {
+
+                                                Swal.fire({
+                                                    type: 'success',
+                                                    icon: 'success',
+                                                    title: 'Inscripción exitosa, se notificará a su correo electrónico.',
+                                                    confirmButtonColor: '#28a745',
+                                                    confirmButtonText: 'Ir a mis cursos',
+                                                }).then((result) => {
+                                                    window.location
+                                                        .href =
+                                                        "https://esit.gob.sv/cursos/miscursos";
+                                                })
+
+                                            } else {
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Error',
+                                                    confirmButtonColor: '#d63030',
+                                                    html: /*html*/ `${data2.message}`
+                                                }).then((result) => {
+                                                    window.location
+                                                        .href =
+                                                        "https://esit.gob.sv/cursos/miscursos";
+                                                })
+                                            }
+                                        }
+                                    })
+                                })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                confirmButtonText: data.title,
+                                html: /*html*/ `${data.message}`
+                            }).then((result) => {
+                                window.location.href =
+                                    "https://esit.gob.sv/perfil";
+                            })
+                        }
+                    },
+                    error: function(error) {
+                        console.log(error)
+                    }
+                })
+            })
+            // window.addEventListener('DOMContentLoaded', () => {
+            // })
+        })
+    </script>
+</body>
+
+</html>
