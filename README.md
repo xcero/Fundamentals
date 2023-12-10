@@ -15,4 +15,4 @@
     	    System.out.println("╚══════════════════════════════════════════╝");
 
 
-Codigo de Barra sitio  https://grandzebu.net ebes tener instalado la FONT  Code 128 del sitio https://grandzebu.net/informatique/codbar-en/code128.htm
+Codigo de Barra sitio  https://grandzebu.net debes tener instalado la FONT  Code 128 del sitio https://grandzebu.net/informatique/codbar-en/code128.htm
