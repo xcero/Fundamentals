@@ -1,6 +1,6 @@
 # Fundamentals
 
-    	System.out.println("╔══════════════════════════════════════════╗");
+         	System.out.println("╔══════════════════════════════════════════╗");
         	System.out.println("║           JAVA FUNDAMENTALS              ║");
     	    System.out.println("║1. Añadir producto                        ║");
     	    System.out.println("║2. Calcular valor total del inventario    ║");
@@ -16,3 +16,12 @@
 
 
 Codigo de Barra sitio  https://grandzebu.net debes tener instalado la FONT  Code 128 del sitio https://grandzebu.net/informatique/codbar-en/code128.htm
+
+Este proyecto se refiere a lo mas basico en Java , y corresponde al proyecto final de Java Fundamentals
+Puedes ejecutarlo en consola  recomiendo instalar el paquete openjdk version "11.0.26" 2025-01-21 LTS
+Amazon Coretto https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.msi
+Instala y luego edita las variables de Entorno , creando una llamada java que apunte a C:\Program Files\Amazon Corretto\jdk11.0.26_4\bin
+
+Despues descarga el proyecto e ingresa a carpeta abre CMD y ejecuta  java -cp .\bin proyecto.InventoryTest
+
+Son exactamente las clases mas simples en java agrege este 2025 la interfaz grafica InventoryTestGUI
