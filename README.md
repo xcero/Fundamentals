@@ -14,7 +14,7 @@
     	    System.out.println("║                                          ║");
     	    System.out.println("╚══════════════════════════════════════════╝");
 
-
+![screenshot](https://github.com/xcero/Fundamentals/blob/main/Java.png)
 Codigo de Barra sitio  https://grandzebu.net debes tener instalado la FONT  Code 128 del sitio https://grandzebu.net/informatique/codbar-en/code128.htm
 
 Este proyecto se refiere a lo mas basico en Java , y corresponde al proyecto final de Java Fundamentals
